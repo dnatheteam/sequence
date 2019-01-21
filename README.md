@@ -1,3 +1,5 @@
+Component for work with sequence
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
