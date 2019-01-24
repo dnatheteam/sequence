@@ -2,7 +2,7 @@ Component for work with sequence
 
 Props:
 
-| Command | Description |
+| State | Description |
 | --- | --- |
 | `animationDuration` | Animation duration in ms |
 | `delay` | Delay to start animation |
