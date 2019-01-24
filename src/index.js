@@ -3,26 +3,36 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import Sequency from "./Sequency";
 import * as serviceWorker from "./serviceWorker";
-import example from "./sprite-1.png";
-import anotherExample from "./sprite-2.png";
+import example_1 from "./sprite-1.png";
+import example_2 from "./sprite-2.png";
+import example_3 from "./sprite-3.png";
 
 ReactDOM.render(
   <>
     <Sequency
-      imageSrc={example}
+      imageSrc={example_1}
       animationDuration={1000}
       delay={1000}
       frameCount={29}
-      frameSize={120}
-      cycle
+      frameWidth={120}
+      frameHeight={120}
     />
-
     <Sequency
-      imageSrc={anotherExample}
+      imageSrc={example_2}
       animationDuration={2000}
       delay={3000}
       frameCount={147}
-      frameSize={306}
+      frameWidth={306}
+      frameHeight={306}
+    />
+    <Sequency
+      imageSrc={example_3}
+      animationDuration={5000}
+      delay={0}
+      frameCount={122}
+      frameWidth={208}
+      frameHeight={200}
+      cycle
     />
   </>,
   document.getElementById("root")

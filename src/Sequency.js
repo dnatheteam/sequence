@@ -15,7 +15,8 @@ class Sequency extends Component {
       cycle: this.props.cycle,
       delay: this.props.delay,
       frameCount: this.props.frameCount,
-      frameSize: this.props.frameSize,
+      frameWidth: this.props.frameWidth,
+      frameHeight: this.props.frameHeight,
       transform: "translate(0px,0)"
     };
 
@@ -41,7 +42,7 @@ class Sequency extends Component {
     };
 
     const startChangeFrames = () => {
-      sequencePosition -= this.state.frameSize;
+      sequencePosition -= this.state.frameWidth;
       count++;
       this.setState({
         transform: "translate(" + sequencePosition + "px,0)"
@@ -68,7 +69,7 @@ class Sequency extends Component {
 
     return (
       <>
-        <Sequence width={this.state.frameSize} height={this.state.frameSize}>
+        <Sequence width={this.state.frameWidth} height={this.state.frameHeight}>
           <img src={this.props.imageSrc} alt="sequence" style={imgStyles} />
         </Sequence>
       </>
