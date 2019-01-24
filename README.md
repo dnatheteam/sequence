@@ -1,18 +1,16 @@
 Component for work with sequence
 
+## Props
 
 | Props | Description |
 | --- | --- |
 | `animationDuration` | Animation duration in ms |
 | `cycle` | Boolean prop for looped animations |
-| `delay` | Delay to start animation |
+| `delay` | Delay to start animation in ms |
 | `imageSrc` | Path to sprite sequence |
 | `frameCount` | The number of frames in the sequence, starting with 0 |
 | `frameWidth` | Single frame width, for css and animation step |
 | `frameHeight` | Single frame height, for css |
-| `transform` | Variable for inline style |
-
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
