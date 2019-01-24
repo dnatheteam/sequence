@@ -12,6 +12,7 @@ class Sequency extends Component {
     super(props);
     this.state = {
       animationDuration: this.props.animationDuration,
+      cycle: this.props.cycle,
       delay: this.props.delay,
       frameCount: this.props.frameCount,
       frameSize: this.props.frameSize,
@@ -28,7 +29,16 @@ class Sequency extends Component {
 
     let sequencePosition = 0,
       count = 0,
-      interval;
+      endAnimationTimeout;
+
+    const endAnimation = () => {
+      if (this.state.cycle) {
+        sequencePosition = 0;
+        count = 0;
+      } else {
+        clearInterval(endAnimationTimeout);
+      }
+    };
 
     const startChangeFrames = () => {
       sequencePosition -= this.state.frameSize;
@@ -36,14 +46,14 @@ class Sequency extends Component {
       this.setState({
         transform: "translate(" + sequencePosition + "px,0)"
       });
-      interval = setTimeout(startChangeFrames, repeatCount);
+      endAnimationTimeout = setTimeout(startChangeFrames, repeatCount);
       if (count === this.state.frameCount) {
-        clearInterval(interval);
+        endAnimation();
       }
     };
 
     setTimeout(() => {
-      interval = setTimeout(startChangeFrames, repeatCount);
+      endAnimationTimeout = setTimeout(startChangeFrames, repeatCount);
     }, this.state.delay);
   }
 

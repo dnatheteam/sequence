@@ -14,6 +14,7 @@ ReactDOM.render(
       delay={1000}
       frameCount={29}
       frameSize={120}
+      cycle
     />
 
     <Sequency
