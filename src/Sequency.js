@@ -41,20 +41,20 @@ class Sequency extends Component {
       }
     };
 
-    const startChangeFrames = () => {
+    const startAnimation = () => {
       sequencePosition -= this.state.frameWidth;
       count++;
       this.setState({
         transform: "translate(" + sequencePosition + "px,0)"
       });
-      endAnimationTimeout = setTimeout(startChangeFrames, repeatCount);
+      endAnimationTimeout = setTimeout(startAnimation, repeatCount);
       if (count === this.state.frameCount) {
         endAnimation();
       }
     };
 
     setTimeout(() => {
-      endAnimationTimeout = setTimeout(startChangeFrames, repeatCount);
+      setTimeout(startAnimation, repeatCount);
     }, this.state.delay);
   }
 
