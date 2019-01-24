@@ -4,9 +4,12 @@ Component for work with sequence
 | Props | Description |
 | --- | --- |
 | `animationDuration` | Animation duration in ms |
+| `cycle` | Boolean prop for looped animations |
 | `delay` | Delay to start animation |
+| `imageSrc` | Path to sprite sequence |
 | `frameCount` | The number of frames in the sequence, starting with 0 |
-| `frameSize` | Single frame width |
+| `frameWidth` | Single frame width, for css and animation step |
+| `frameHeight` | Single frame height, for css |
 | `transform` | Variable for inline style |
 
 
