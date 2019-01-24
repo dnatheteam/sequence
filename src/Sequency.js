@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import test from "./sprite-1.png";
 
 const Sequence = styled.div`
   width: ${props => props.width + "px"};
@@ -12,10 +11,10 @@ class Sequency extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      animationDuration: 1000,
-      delay: 1000,
-      frameCount: 29,
-      frameSize: 120,
+      animationDuration: this.props.animationDuration,
+      delay: this.props.delay,
+      frameCount: this.props.frameCount,
+      frameSize: this.props.frameSize,
       transform: "translate(0px,0)"
     };
 
@@ -23,29 +22,28 @@ class Sequency extends Component {
   }
 
   changeFrames() {
-    let sequencePosition = 0,
-      count = 0;
-
     const repeatCount = Math.round(
       this.state.animationDuration / this.state.frameCount
     );
 
-    const that = this;
-    
+    let sequencePosition = 0,
+      count = 0,
+      interval;
+
+    const startChangeFrames = () => {
+      sequencePosition -= this.state.frameSize;
+      count++;
+      this.setState({
+        transform: "translate(" + sequencePosition + "px,0)"
+      });
+      interval = setTimeout(startChangeFrames, repeatCount);
+      if (count === this.state.frameCount) {
+        clearInterval(interval);
+      }
+    };
+
     setTimeout(() => {
-      let interval = setTimeout(function go() {
-        sequencePosition -= that.state.frameSize;
-        count++;
-
-        that.setState({
-          transform: "translate(" + sequencePosition + "px,0)"
-        });
-        interval = setTimeout(go, repeatCount);
-
-        if (count === that.state.frameCount) {
-          clearInterval(interval);
-        }
-      }, repeatCount);
+      interval = setTimeout(startChangeFrames, repeatCount);
     }, this.state.delay);
   }
 
@@ -61,7 +59,7 @@ class Sequency extends Component {
     return (
       <>
         <Sequence width={this.state.frameSize} height={this.state.frameSize}>
-          <img src={test} alt="sequence" style={imgStyles} />
+          <img src={this.props.imageSrc} alt="sequence" style={imgStyles} />
         </Sequence>
       </>
     );

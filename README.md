@@ -1,14 +1,14 @@
 Component for work with sequence
 
-Props:
 
-| State | Description |
+| Props | Description |
 | --- | --- |
 | `animationDuration` | Animation duration in ms |
 | `delay` | Delay to start animation |
 | `frameCount` | The number of frames in the sequence, starting with 0 |
 | `frameSize` | Single frame width |
 | `transform` | Variable for inline style |
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
