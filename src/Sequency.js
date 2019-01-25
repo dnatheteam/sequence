@@ -1,12 +1,10 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-const ANIMATION = keyframes`
-  100% {
-    background-position: 100% 0;
-  }
-`;
+import { ANIMATION } from './constants';
 
-export let Sequency = styled.div`
+export { ANIMATION } from './constants';
+
+export const Sequency = styled.div`
   position: relative;
   display: block;
   top: 0;
@@ -29,4 +27,5 @@ export let Sequency = styled.div`
   animation-timing-function: steps(${ props => props.frames || 0 });
   animation-fill-mode: ${ props => props.mode || 'forwards' };
   animation-direction: ${ props => props.direction || 'normal' };
+
 `;
