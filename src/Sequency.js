@@ -21,7 +21,7 @@ export const Sequency = styled.div`
   background-image: url(${props => props.src});
 
   animation-name: ${ ANIMATION };
-  animation-duration: ${ props => props.duration || 1 }ms;
+  animation-duration: ${ props => props.duration || 1000 }ms;
   animation-delay: ${ props => props.delay || 0 }ms;
   animation-iteration-count: ${ props => props.iterations || 'infinite' };
   animation-timing-function: steps(${ props => props.frames || 0 });
