@@ -1,18 +1,17 @@
 Component for work with sequence
 
 ## Props
-
-| Props | Description |
-| --- | --- |
-| `width` | Frame width | default: 100%
-| `height` | Frame height | default: 100%
-| `src` | Path to sprite | default: undefined
-| `duration` | Animation duration in ms | default: 1000
-| `delay` | Delay to start animation in ms | default: 0
-| `iterations` | Count animation iterations (integer 0 - infinite, 1 - one iteration etc..) | default: infinite
-| `frames` | The count of frames in the sprite | default: 0
-| `mode` | Property specifies a style for the target element when the animation is not playing (before it starts, after it ends, or both) see css animation-fill-mode (forwards, backwards, both, none) | default: forwards
-| `direction` | Property specifies whether an animation should be played forwards, backwards or in alternate cycles. See css animation-direction (normal, reverse, alternate, alternate-reverse) | default: normal
+| Props | Description | Default
+| --- | --- | --- |
+| `width` | Frame width | `100%`
+| `height` | Frame height | `100%`
+| `src` | Path to sprite | `undefined`
+| `duration` | Animation duration in ms | `1000`
+| `delay` | Delay to start animation in ms | `0`
+| `iterations` | Count animation iterations (0 - infinite, 1 - one iteration etc..) | `infinite`
+| `frames` | The count of frames in the sprite | `0`
+| `mode` | Property specifies a style for the target element when the animation is not playing (before it starts, after it ends, or both) see css animation-fill-mode (forwards, backwards, both, none) | `forwards`
+| `direction` | Property specifies whether an animation should be played forwards, backwards or in alternate cycles. See css animation-direction (normal, reverse, alternate, alternate-reverse) | `normal`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
