@@ -1,80 +1,31 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const Sequence = styled.div`
-  width: ${props => props.width + "px"};
-  height: ${props => props.height + "px"};
+import { ANIMATION } from './constants';
+
+export { ANIMATION } from './constants';
+
+export const Sequency = styled.div`
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  width: ${ props => props.width || '100%'};
+  height: ${ props => props.height || '100%' };
   overflow: hidden;
+  will-change: background-position;
+
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  background-image: url(${props => props.src});
+
+  animation-name: ${ ANIMATION };
+  animation-duration: ${ props => props.duration || 1000 }ms;
+  animation-delay: ${ props => props.delay || 0 }ms;
+  animation-iteration-count: ${ props => props.iterations || 'infinite' };
+  animation-timing-function: steps(${ props => props.frames || 0 });
+  animation-fill-mode: ${ props => props.mode || 'forwards' };
+  animation-direction: ${ props => props.direction || 'normal' };
+
 `;
-
-class Sequency extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      animationDuration: this.props.animationDuration,
-      cycle: this.props.cycle,
-      delay: this.props.delay,
-      frameCount: this.props.frameCount,
-      frameWidth: this.props.frameWidth,
-      frameHeight: this.props.frameHeight,
-      transform: "translate(0px,0)"
-    };
-
-    this.changeFrames = this.changeFrames.bind(this);
-  }
-
-  changeFrames() {
-    const repeatCount = Math.round(
-      this.state.animationDuration / this.state.frameCount
-    );
-
-    let sequencePosition = 0,
-      count = 0,
-      endAnimationTimeout;
-
-    const endAnimation = () => {
-      if (this.state.cycle) {
-        sequencePosition = 0;
-        count = 0;
-      } else {
-        clearInterval(endAnimationTimeout);
-      }
-    };
-
-    const startAnimation = () => {
-      sequencePosition -= this.state.frameWidth;
-      count++;
-      this.setState({
-        transform: "translate(" + sequencePosition + "px,0)"
-      });
-      endAnimationTimeout = setTimeout(startAnimation, repeatCount);
-      if (count === this.state.frameCount) {
-        endAnimation();
-      }
-    };
-
-    setTimeout(() => {
-      setTimeout(startAnimation, repeatCount);
-    }, this.state.delay);
-  }
-
-  componentDidMount() {
-    this.changeFrames();
-  }
-
-  render() {
-    const imgStyles = {
-      transform: this.state.transform
-    };
-
-    return (
-      <>
-        <Sequence width={this.state.frameWidth} height={this.state.frameHeight}>
-          <img src={this.props.imageSrc} alt="sequence" style={imgStyles} />
-        </Sequence>
-      </>
-    );
-  }
-}
-
-export default Sequency;

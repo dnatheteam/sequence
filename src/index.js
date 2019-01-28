@@ -1,44 +1,41 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import Sequency from "./Sequency";
-import * as serviceWorker from "./serviceWorker";
-import example_1 from "./sprite-1.png";
-import example_2 from "./sprite-2.png";
-import example_3 from "./sprite-3.png";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import { Sequency } from './Sequency';
+
+import firstSprite from './sprite-1.png';
+import secondSprite from './sprite-2.png';
+import thirdSprite from './sprite-3.png';
 
 ReactDOM.render(
-  <>
+  <div>
     <Sequency
-      imageSrc={example_1}
-      animationDuration={1000}
-      delay={1000}
-      frameCount={29}
-      frameWidth={120}
-      frameHeight={120}
+      src = { firstSprite }
+      duration = { 1000 }
+      delay = { 1000 }
+      frames = { 29 }
+      width = "120px"
+      height = "120px"
+      mode = "backwards"
+      direction = "alternate-reverse"
     />
     <Sequency
-      imageSrc={example_2}
-      animationDuration={2000}
-      delay={3000}
-      frameCount={147}
-      frameWidth={306}
-      frameHeight={306}
+      src = { secondSprite }
+      duration = { 2000 }
+      delay = { 3000 }
+      frames = { 147 }
+      width = "306px"
+      height = "306px"
+      iterations = { 1 }
     />
     <Sequency
-      imageSrc={example_3}
-      animationDuration={5000}
-      delay={0}
-      frameCount={122}
-      frameWidth={208}
-      frameHeight={200}
-      cycle
+      src = { thirdSprite }
+      duration = { 5000 }
+      delay = { 0 }
+      frames = { 122 }
+      width = "208px"
+      height = "200px"
     />
-  </>,
-  document.getElementById("root")
+  </div>,
+  document.getElementById('root') // eslint-disable-line
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
