@@ -1,8 +1,10 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-import { ANIMATION } from './constants';
-
-export { ANIMATION } from './constants';
+export const ANIMATION = keyframes`
+  100% {
+    background-position: 100% 0;
+  }
+`;
 
 export const Sequency = styled.div`
   position: relative;
@@ -16,7 +18,7 @@ export const Sequency = styled.div`
 
   background-position: 0 0;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto 100%;
   background-color: transparent;
   background-image: url(${props => props.src});
 
