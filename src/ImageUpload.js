@@ -45,8 +45,8 @@ class ImageUpload extends Component {
           >
             Upload Image
           </button>
-          <Editor imageUrl={imagePreviewUrl} />
         </form>
+        <Editor imageUrl={imagePreviewUrl} />
       </div>
     );
   }

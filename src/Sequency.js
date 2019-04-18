@@ -11,8 +11,8 @@ export const Sequency = styled.div`
   display: block;
   top: 0;
   left: 0;
-  width: ${props => props.width || "100%"};
-  height: ${props => props.height || "100%"};
+  width: ${props => props.width + "px" || "100%"};
+  height: ${props => props.height + "px" || "100%"};
   overflow: hidden;
   will-change: background-position;
 
