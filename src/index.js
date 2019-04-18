@@ -1,15 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import ImageUpload from "./ImageUpload";
 import "./index.css";
-import { Sequency } from "./Sequency";
 
-import firstSprite from "./sprite-1.png";
-import secondSprite from "./sprite-2.png";
-import thirdSprite from "./sprite-3.png";
+// import { Sequency } from "./Sequency";
+
+// import firstSprite from "./sprite-1.png";
+// import secondSprite from "./sprite-2.png";
+// import thirdSprite from "./sprite-3.png";
 
 ReactDOM.render(
   <div>
-    <Sequency
+    <ImageUpload />
+    
+    {/* <Sequency
       src={firstSprite}
       duration={1000}
       delay={1000}
@@ -35,7 +39,7 @@ ReactDOM.render(
       frames={123}
       width="208px"
       height="200px"
-    />
+    /> */}
   </div>,
   document.getElementById("root") // eslint-disable-line
 );
