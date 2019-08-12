@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Sequency } from "./Sequency";
-import exampleSrc from "./sprite-1.png";
+import React, { Component } from 'react';
+import { Sequency } from './Sequency';
+import exampleSrc from './sprite-1.png';
 
 class Example extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class Example extends Component {
       height: 120,
       width: 120,
       frames: 30,
-      delay: 1000
+      delay: 0
     };
   }
 
@@ -35,53 +35,56 @@ class Example extends Component {
     );
 
     return (
-      <div className="img-editor">
-        <div className="imgPreview">{imagePreview}</div>
+      <div>
+        {/* <h2>Example</h2> */}
+        <div className="img-editor">
+          <div className="imgPreview">{imagePreview}</div>
 
-        <label>Duration</label>
-        <input
-          type="text"
-          className="duration"
-          placeholder="duration"
-          value={this.state.duration}
-          onChange={e => this.handleInputChange(e)}
-        />
+          <label>Duration</label>
+          <input
+            type="text"
+            className="duration"
+            placeholder="duration"
+            value={this.state.duration}
+            onChange={e => this.handleInputChange(e)}
+          />
 
-        <label>Width</label>
-        <input
-          type="text"
-          className="width"
-          placeholder="width"
-          value={this.state.width}
-          onChange={e => this.handleInputChange(e)}
-        />
+          <label>Width</label>
+          <input
+            type="text"
+            className="width"
+            placeholder="width"
+            value={this.state.width}
+            onChange={e => this.handleInputChange(e)}
+          />
 
-        <label>Height</label>
-        <input
-          type="text"
-          className="height"
-          placeholder="height"
-          value={this.state.height}
-          onChange={e => this.handleInputChange(e)}
-        />
+          <label>Height</label>
+          <input
+            type="text"
+            className="height"
+            placeholder="height"
+            value={this.state.height}
+            onChange={e => this.handleInputChange(e)}
+          />
 
-        <label>Delay</label>
-        <input
-          type="text"
-          className="delay"
-          placeholder="delay"
-          value={this.state.delay}
-          onChange={e => this.handleInputChange(e)}
-        />
+          <label>Delay</label>
+          <input
+            type="text"
+            className="delay"
+            placeholder="delay"
+            value={this.state.delay}
+            onChange={e => this.handleInputChange(e)}
+          />
 
-        <label>Frames</label>
-        <input
-          type="text"
-          className="frames"
-          placeholder="frames"
-          value={this.state.frames}
-          onChange={e => this.handleInputChange(e)}
-        />
+          <label>Frames</label>
+          <input
+            type="text"
+            className="frames"
+            placeholder="frames"
+            value={this.state.frames}
+            onChange={e => this.handleInputChange(e)}
+          />
+        </div>
       </div>
     );
   }

@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import ImageUpload from "./ImageUpload";
-import Editor from "./Editor";
-import Example from "./Example";
+import React, { Component } from 'react';
+import ImageUpload from './ImageUpload';
+import Editor from './Editor';
+import Example from './Example';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { file: "", imageUrl: "" };
+    this.state = { file: '', imageUrl: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleImageChange = this.handleImageChange.bind(this);
   }
@@ -14,7 +14,7 @@ class App extends Component {
   handleSubmit(e) {
     e.preventDefault();
     // TODO: do something with -> this.state.file
-    console.log("handle uploading-", this.state.file);
+    // console.log('handle uploading-', this.state.file);
   }
 
   handleImageChange(e) {
@@ -32,17 +32,22 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.imagePreviewUrl);
-
     return (
-      <div>
-        <ImageUpload
-          handleChange={this.handleChange}
-          handleImageChange={this.handleImageChange}
-        />
-        <Editor imageUrl={this.state.imagePreviewUrl} />
-        <Example />
-      </div>
+      <>
+        <div>
+          <ImageUpload
+            handleChange={this.handleChange}
+            handleImageChange={this.handleImageChange}
+          />
+          <Editor imageUrl={this.state.imagePreviewUrl} />
+        </div>
+        <details>
+          <summary>
+            <mark>Example</mark>
+          </summary>
+          <Example />
+        </details>
+      </>
     );
   }
 }
