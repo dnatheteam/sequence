@@ -12,13 +12,6 @@ class ImageUpload extends Component {
             type="file"
             onChange={e => handleImageChange(e)}
           />
-          <button
-            className="submitButton"
-            type="submit"
-            onClick={e => handleSubmit(e)}
-          >
-            Upload Image
-          </button>
         </form>
       </>
     );

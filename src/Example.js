@@ -36,10 +36,13 @@ class Example extends Component {
 
     return (
       <div>
-        {/* <h2>Example</h2> */}
         <div className="img-editor">
+          <br />
+          <a href={exampleSrc} download>
+            Example sequence png
+          </a>
+          <br />
           <div className="imgPreview">{imagePreview}</div>
-
           <label>Duration</label>
           <input
             type="text"

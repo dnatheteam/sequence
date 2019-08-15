@@ -43,3 +43,7 @@ h2 {
 .app {
   display: flex;
 }
+
+.example-sequence {
+  width: 100%;
+}

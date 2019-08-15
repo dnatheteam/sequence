@@ -6,8 +6,8 @@ class Editor extends Component {
     super(props);
     this.state = {
       duration: 0,
-      height: 0,
-      width: 0,
+      height: 50,
+      width: 50,
       frames: 0,
       delay: 0
     };
@@ -37,7 +37,7 @@ class Editor extends Component {
       );
     } else {
       imagePreview = (
-        <p className="preview-text">Please select an Image for Preview</p>
+        <p className="preview-text">Please select an image for preview</p>
       );
     }
 
