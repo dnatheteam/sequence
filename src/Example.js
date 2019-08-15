@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Sequency } from './Sequency';
-import exampleSrc from './sprite-1.png';
+import exampleSrc from './sprite-2.png';
 
 class Example extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      duration: 1000,
+      duration: 2000,
       height: 120,
       width: 120,
-      frames: 30,
+      frames: 148,
       delay: 0
     };
   }
